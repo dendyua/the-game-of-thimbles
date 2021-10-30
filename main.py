@@ -2,8 +2,6 @@ import random
 
 print("Welcome to THE GAME OF THIMBLES v.0.1.0 by dendyua")
 
-boils = [1, 2, 3]
-
 
 def lang():
     try:
@@ -18,7 +16,7 @@ def lang():
 
 
 def err():
-    if chois == boils[0]:
+    if chois == random.randint(1, 3):
         print("Congratulations! You won!")
     else:
         print("Sorry, you didn't guess. Try again!")
@@ -26,7 +24,6 @@ def err():
 
 lang()
 while True:
-    random.shuffle(boils)
     try:
         chois = int(input("Please enter the thimble number (from 1 to 3):"))
     except ValueError:
