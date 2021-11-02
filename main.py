@@ -1,7 +1,5 @@
 import random
 
-print("Welcome to THE GAME OF THIMBLES v.0.1.0 by dendyua")
-
 
 def lang():
     try:
@@ -22,14 +20,17 @@ def err():
         print("Sorry, you didn't guess. Try again!")
 
 
-lang()
-while True:
-    try:
-        chois = int(input("Please enter the thimble number (from 1 to 3):"))
-    except ValueError:
-        print("You need to enter a number from 1 to 3")
-    else:
-        if 1 <= chois <= 3:
-            err()
-        else:
+if __name__ == "__main__":
+    print("Welcome to THE GAME OF THIMBLES v.0.1.0 by dendyua")
+
+    lang()
+    while True:
+        try:
+            chois = int(input("Please enter the thimble number (from 1 to 3):"))
+        except ValueError:
             print("You need to enter a number from 1 to 3")
+        else:
+            if 1 <= chois <= 3:
+                err()
+            else:
+                print("You need to enter a number from 1 to 3")
