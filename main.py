@@ -1,9 +1,9 @@
 import random
 
 
-def lang():
+def lang() -> None:
     try:
-        lang_chois = int(input("Choose your language: [1]=EN [2]=RU:"))
+        lang_chois: int = int(input("Choose your language: [1]=EN [2]=RU:"))
     except ValueError:
         print("Choose your language: [1]=EN [2]=RU")
     else:
@@ -13,7 +13,7 @@ def lang():
             pass
 
 
-def err():
+def err() -> None:
     if chois == random.randint(1, 3):
         print("Congratulations! You won!")
     else:
@@ -26,7 +26,7 @@ if __name__ == "__main__":
     lang()
     while True:
         try:
-            chois = int(input("Please enter the thimble number (from 1 to 3):"))
+            chois: int = int(input("Please enter the thimble number (from 1 to 3):"))
         except ValueError:
             print("You need to enter a number from 1 to 3")
         else:
