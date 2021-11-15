@@ -1,0 +1,6 @@
+"en-us":
+  "welcome": "Welcome to THE GAME OF THIMBLES v.0.1.0 by dendyua"
+  "thimble_number": "Please enter the thimble number (from 1 to 3): "
+  "thimble_number_error": "You need to enter a number from 1 to 3!"
+  "win": "Congratulations! You won!"
+  "lose": "Sorry, you didn't guess. Try again!"
