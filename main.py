@@ -1,14 +1,20 @@
 import random
 
+import i18n
+
 
 def lang() -> None:
     """Language config"""
+    # set localisations directory
+    i18n.load_path.append("translations/")
+    # Default localisation
+    i18n.set('fallback', 'en-us')
     try:
-        lang_chois: int = int(input("Choose your language: [1]=EN [2]=RU:"))
+        lang_choice: int = int(input("Choose your language: [1]=EN [2]=RU:"))
     except ValueError:
         print("Choose your language: [1]=EN [2]=RU")
     else:
-        if lang_chois == 1:
+        if lang_choice == 1:
             pass
         else:
             pass
@@ -16,28 +22,28 @@ def lang() -> None:
 
 def err() -> None:
     """Check for win"""
-    if chois == random.randint(1, 3):
-        print("Congratulations! You won!")
+    if choice == random.randint(1, 3):
+        print(i18n.t("locale.win"))
     else:
-        print("Sorry, you didn't guess. Try again!")
+        print(i18n.t("locale.lose"))
 
 
 if __name__ == "__main__":
-    print("Welcome to THE GAME OF THIMBLES v.0.1.0 by dendyua")
-
     # Language set
     lang()
+
+    print(i18n.t("locale.welcome"))
 
     # Main loop
     while True:
         try:
             # Check input for integer from 1 to 3
-            chois: int = int(input("Please enter the thimble number (from 1 to 3):"))
+            choice: int = int(input(i18n.t("locale.thimble_number")))
         except ValueError:
-            print("You need to enter a number from 1 to 3")
+            print(i18n.t("locale.thimble_number_error"))
         else:
-            if 1 <= chois <= 3:
+            if 1 <= choice <= 3:
                 # Check for win
                 err()
             else:
-                print("You need to enter a number from 1 to 3")
+                print(i18n.t("locale.thimble_number_error"))
