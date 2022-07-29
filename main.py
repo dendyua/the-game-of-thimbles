@@ -9,14 +9,12 @@ def lang() -> None:
     # Default localisation
     i18n.set('fallback', 'en-us')
     try:
-        lang_choice: int = int(input('Choose your language: [1]=EN [2]=UA [3]=ru:'))
+        lang_choice: int = int(input('Choose your language: [1]=EN [2]=UA:'))
     except ValueError:
-        print('Choose your language: [1]=EN [2]=UA [3]=ru:')
+        print('Choose your language: [1]=EN [2]=UA:')
     else:
         if lang_choice == 2:
             i18n.set('fallback', 'ua-ua')
-        elif lang_choice == 3:
-            i18n.set('fallback', 'ru-ru')
         else:
             pass
 
